@@ -17,7 +17,7 @@
                     $limit_start = ($hlm - 1) * $limit;
                     $no = $limit_start + 1;
 
-                    $sql = "SELECT * FROM article ORDER BY tanggal DESC LIMIT $limit_start, $limit";
+                    $sql = "SELECT * FROM gallery ORDER BY tanggal DESC LIMIT $limit_start, $limit";
                     $hasil = $conn->query($sql);
                     
                     while ($row = $hasil->fetch_assoc()) {
@@ -50,7 +50,7 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Article</h1>
+                                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Gallery</h1>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <form method="post" action="" enctype="multipart/form-data">
@@ -96,13 +96,13 @@
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Konfirmasi Hapus Article</h1>
+                                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Konfirmasi Hapus Gallery</h1>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 <form method="post" action="" enctype="multipart/form-data">
                                                     <div class="modal-body">
                                                         <div class="mb-3">
-                                                            <label for="formGroupExampleInput" class="form-label">Yakin akan menghapus artikel "<strong><?= $row["judul"] ?></strong>"?</label>
+                                                            <label for="formGroupExampleInput" class="form-label">Yakin akan menghapus gallery "<strong><?= $row["judul"] ?></strong>"?</label>
                                                             <input type="hidden" name="id" value="<?= $row["id"] ?>">
                                                             <input type="hidden" name="gambar" value="<?= $row["gambar"] ?>">
                                                         </div>
@@ -125,11 +125,11 @@
 </table>
 
 <?php 
-$sql1 = "SELECT * FROM article";
-$hasil1 = $conn->query($sql1); 
-$total_records = $hasil1->num_rows;
+$sql2 = "SELECT * FROM gallery";
+$hasil2 = $conn->query($sql2); 
+$total_records = $hasil2->num_rows;
 ?>
-<p>Total article : <?php echo $total_records; ?></p>
+<p>Total gallery : <?php echo $total_records; ?></p>
 <nav class="mb-2">
     <ul class="pagination justify-content-end">
     <?php

@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Jan 2025 pada 15.57
--- Versi server: 10.4.32-MariaDB
--- Versi PHP: 8.0.30
+-- Generation Time: Jan 12, 2025 at 01:43 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `article`
+-- Table structure for table `article`
 --
 
 CREATE TABLE `article` (
@@ -37,21 +37,48 @@ CREATE TABLE `article` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `article`
+-- Dumping data for table `article`
 --
 
 INSERT INTO `article` (`id`, `judul`, `isi`, `gambar`, `tanggal`, `username`) VALUES
-(1, 'Lightning McQueen', 'Lightning McQueen yang menjadi tokoh utama dalam film Cars.', 'image/mcqueen.jpg', '2024-12-19 13:27:30', 'admin'),
-(2, 'Mater', 'Mater yang merupakan sahabat terbaik dari McQueen.', 'image/mater.png', '2024-12-19 13:29:50', 'admin'),
-(3, 'Doc Hudson', 'Doc Hudson adalah salah satu legenda dalam dunia balapan di film Cars.', 'image/doc.jpg', '2024-12-19 13:35:20', 'admin'),
-(4, 'Sally', 'Sally adalah karakter mobil cantik berwarna biru langit yang menjadi pacar McQueen dalam film Cars.', 'image/sally.jpg', '2024-12-19 13:27:30', 'admin'),
-(22, 'Guido', 'Guido adalah karakter truk forklift atau truk garpu yang bekerja bersama Luigi.', 'image/guido.jpg', '2024-12-19 13:27:30', 'admin'),
-(28, 'Luigi', 'Luigi yang merupakan bos dari Guido.', 'image/luigi.jpg', '2024-12-19 14:01:35', 'admin');
+(1, 'mcqueen', 'mcqueen adalah mobil merah', 'mcqueen.jpg', '2024-12-19 13:27:30', 'admin'),
+(10, 'mater', 'mater adalah mobil derek', 'mater.png', '2024-12-19 13:29:50', 'admin'),
+(13, 'sally', 'sally adalah mobil biru', 'sally.jpg', '2024-12-19 13:35:20', 'admin'),
+(14, 'doc', 'doc adalah mobil tua', 'doc.jpg', '2024-12-19 13:38:44', 'admin'),
+(15, 'guido', 'guido adalah pembantu mobil merah', 'guido.jpg', '2025-01-09 11:19:57', 'admin'),
+(16, 'luigi', 'luigi adalah mobil kuning', 'luigi.jpg', '2025-01-09 11:22:10', 'admin');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `gallery`
+--
+
+CREATE TABLE `gallery` (
+  `id` int(11) NOT NULL,
+  `judul` text DEFAULT NULL,
+  `isi` text DEFAULT NULL,
+  `gambar` text DEFAULT NULL,
+  `tanggal` datetime DEFAULT NULL,
+  `username` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `profile`
+--
+
+CREATE TABLE `profile` (
+  `username` varchar(50) DEFAULT NULL,
+  `password` text DEFAULT NULL,
+  `foto` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -62,7 +89,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `username`, `password`, `foto`) VALUES
@@ -74,29 +101,29 @@ INSERT INTO `user` (`id`, `username`, `password`, `foto`) VALUES
 --
 
 --
--- Indeks untuk tabel `article`
+-- Indexes for table `article`
 --
 ALTER TABLE `article`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `article`
+-- AUTO_INCREMENT for table `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;

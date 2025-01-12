@@ -1,10 +1,10 @@
 <?php
 date_default_timezone_set('Asia/Jakarta');
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db = "ao"; //nama database
+$servername = "sql212.infinityfree.com";
+$username = "if0_38066929";
+$password = "VU0HDpAxgY";
+$db = "if0_38066929_webdailyjournal"; //nama database
 
 //create connection
 $conn = new mysqli($servername,$username,$password,$db);
